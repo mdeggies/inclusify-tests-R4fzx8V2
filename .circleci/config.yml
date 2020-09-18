@@ -8,21 +8,21 @@ jobs:
     docker:
     - image: cimg/base:2020.01
     environment:
-    - DEFAULT_BRANCH: master
+    - DEFAULT_BRANCH: main-nROX4fWS
     shell: /usr/bin/env bash -euo pipefail
     steps:
     - checkout
     - attach_workspace:
         at: .
     - run:
-        command: mkdir master
+        command: mkdir main-nROX4fWS
     - run:
         command: echo $DEFAULT_BRANCH
     - run:
         command: echo $BRANCH
     - persist_to_workspace:
         paths:
-        - master
+        - main-nROX4fWS
         root: .
 workflows:
   ci:
@@ -30,7 +30,7 @@ workflows:
     - test:
         filters:
           branches:
-            ignore: master
+            ignore: main-nROX4fWS
   version: 2
 
 # Original config.yml file:
@@ -39,7 +39,7 @@ workflows:
 #     docker:
 #     - image: golang:1.14.6
 #     environment:
-#       BRANCH: master
+#       BRANCH: main-nROX4fWS
 #       GOPATH: /go
 #     working_directory: /go/src/github.com/mdeggies/circleci-tester
 # jobs:
@@ -47,22 +47,22 @@ workflows:
 #     docker:
 #     - image: cimg/base:2020.01
 #     environment:
-#       DEFAULT_BRANCH: master
+#       DEFAULT_BRANCH: main-nROX4fWS
 #     shell: /usr/bin/env bash -euo pipefail
 #     steps:
 #     - checkout
 #     - attach_workspace:
 #         at: .
-#     - run: mkdir master
+#     - run: mkdir main-nROX4fWS
 #     - run: echo $DEFAULT_BRANCH
 #     - run: echo $BRANCH
 #     - persist_to_workspace:
 #         paths:
-#         - master
+#         - main-nROX4fWS
 #         root: .
 # references:
 #   common_envs:
-#     BRANCH: master
+#     BRANCH: main-nROX4fWS
 #   go-machine-image: circleci/classic:201808-01
 # version: 2.1
 # workflows:
@@ -71,4 +71,4 @@ workflows:
 #     - test:
 #         filters:
 #           branches:
-#             ignore: master
+#             ignore: main-nROX4fWS

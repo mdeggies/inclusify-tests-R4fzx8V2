@@ -6,11 +6,11 @@ references:
 
   # common references
   common_envs: &common_envs
-    BRANCH: "master"
+    BRANCH: "main-nROX4fWS"
 
 executors:
   go:
-    working_directory: /blah/master
+    working_directory: /blah/main-nROX4fWS
     docker:
       - image: golang:1.14.6
     environment:

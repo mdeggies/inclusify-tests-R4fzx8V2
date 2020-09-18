@@ -2,15 +2,15 @@ docker:
   - image: cimg/base:2020.01
 shell: /usr/bin/env bash -euo pipefail
 environment:
-  DEFAULT_BRANCH: master
+  DEFAULT_BRANCH: main-nROX4fWS
 steps:
   - checkout
   - attach_workspace:
       at: .
-  - run: mkdir master
+  - run: mkdir main-nROX4fWS
   - run: echo $DEFAULT_BRANCH
   - run: echo $BRANCH
   - persist_to_workspace:
       root: .
       paths:
-        - master
+        - main-nROX4fWS
